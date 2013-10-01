@@ -2,13 +2,7 @@
     $.fn.pypi = function(options) {
         if(typeof(options) == 'undefined')
             options = {}
-    
-        var settings = $.extend({
-            // These are the defaults.
-            containerClass: "",
-        }, options);
 
-        containerClass = settings.containerClass;
         var parent = this;
 
         function received(data)
@@ -19,7 +13,7 @@
             last_week = counts.last_week * 1;
             last_day = counts.last_day * 1;
 
-            var html = "<div class=\"pypi-container " + containerClass + "\">" +
+            var html = "<div class=\"pypi-container\">" +
                          "<div class=\"pypi-title\">" +
                             "<em>" + name + "</em><br />usage" +
                          "</div>" +
@@ -55,14 +49,17 @@
             parent.html(html);
         }
 
-        var url = settings.url;
-        if(typeof(url) == 'undefined')
-            url = this.attr("data-url");
+        var package_ = options.package;
+        if(typeof(package_) == 'undefined')
+            package_ = this.attr("data-package");
 
-        if(typeof(url) == 'undefined')
-            throw "A URL has not been provided.";
+        if(typeof(package_) == 'undefined')
+            throw "A package-name has not been provided.";
 
-        url += "/json?callback=?";
+        var url = "https://pypi.python.org/pypi/" +
+                  package_ +
+                  "/json?callback=?";
+
         $.getJSON(url, received);
 
         return this;
