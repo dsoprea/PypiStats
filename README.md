@@ -21,5 +21,5 @@ Invoke the "pypi" plugin on them:
 
 It'll look like:
 
-![alt text](https://github.com/dsoprea/PypiStats/raw/master/src/common/images/icon48.png "Example Stats Output")
+![alt text](https://github.com/dsoprea/PypiStats/raw/master/index.png "Example Stats Output")
 
