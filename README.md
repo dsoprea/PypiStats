@@ -23,3 +23,9 @@ It'll look like:
 
 ![alt text](https://github.com/dsoprea/PypiStats/raw/master/index.png "Example Stats Output")
 
+This image comes from the included index.html file. Though I've added styling 
+to wrap the two boxes with a black border, the boxes themselves have the 
+default styling.
+
+Thanks to the Python website team for providing the running download counts.
+
