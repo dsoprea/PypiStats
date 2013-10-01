@@ -1,0 +1,8 @@
+.pypi-float-stop { clear: both; }
+.pypi-container { font-size: 0.8em; border: 1px solid darkgray; width: 158px; padding: 4px 8px; }
+.pypi-container .pypi-title { margin-bottom: 10px; text-align: center; }
+.pypi-container .pypi-title em { font-weight: bold; }
+.pypi-container .pypi-row { width: 149px; }
+.pypi-container .pypi-row .pypi-label { float: left; width: 90px; }
+.pypi-container .pypi-row .pypi-count { float: right; width: 59px; font-weight: bold; }
+
