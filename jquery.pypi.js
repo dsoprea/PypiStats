@@ -63,13 +63,7 @@
             throw "A URL has not been provided.";
 
         url += "/json?callback=?";
-        $.getJSON(url, received) .done(function( json ) {
-console.log( "JSON Data: " + json.users[ 3 ].name );
-})
-.fail(function( jqxhr, textStatus, error ) {
-var err = textStatus + ", " + error;
-console.log( "Request Failed: " + err );
-});
+        $.getJSON(url, received);
 
         return this;
     };
