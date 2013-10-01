@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+        <link href="pypi/jquery.pypi.css" rel="stylesheet" type="text/css" />
+        <script src="pypi/jquery.pypi.js"></script>
+        <style type="text/css">
+            .pypi-group-container { border: 1px solid black; padding: 5px; width: 176px; margin: 40px auto 0px auto; }
+            #pypi-display-pysecure { }
+            #pypi-display-pytzpure { margin-top: 5px; }
+        </style>
+    </head>
+    <body>
+        <div class="pypi-group-container">
+            <div id="pypi-display-pysecure" data-url="http://pypi.python.org/pypi/pysecure"></div>
+            <div id="pypi-display-pytzpure" data-url="http://pypi.python.org/pypi/pytzpure"></div>
+        </div>
+    </body>
+</html>
+<script type="text/javascript">
+$(function() {
+    $("#pypi-display-pysecure").pypi()
+    $("#pypi-display-pytzpure").pypi()
+});
+</script>
+
