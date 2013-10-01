@@ -3,6 +3,14 @@
         if(typeof(options) == 'undefined')
             options = {}
 
+        var package_ = options.package;
+        if(typeof(package_) == 'undefined')
+            package_ = this.attr("data-package");
+
+        if(typeof(package_) == 'undefined')
+            throw "A package-name has not been provided.";
+
+        var package_url = "https://pypi.python.org/pypi/" + package_;
         var parent = this;
 
         function received(data)
@@ -15,7 +23,7 @@
 
             var html = "<div class=\"pypi-container\">" +
                          "<div class=\"pypi-title\">" +
-                            "<em>" + name + "</em><br />usage" +
+                            "<em><a href=\"" + package_url + "\" target=\"_blank\">" + name + "</a></em><br />usage" +
                          "</div>" +
                          "<div class=\"pypi-row\">" + 
                            "<div class=\"pypi-label\">" +
@@ -49,17 +57,7 @@
             parent.html(html);
         }
 
-        var package_ = options.package;
-        if(typeof(package_) == 'undefined')
-            package_ = this.attr("data-package");
-
-        if(typeof(package_) == 'undefined')
-            throw "A package-name has not been provided.";
-
-        var url = "https://pypi.python.org/pypi/" +
-                  package_ +
-                  "/json?callback=?";
-
+        var url = package_url + "/json?callback=?";
         $.getJSON(url, received);
 
         return this;
